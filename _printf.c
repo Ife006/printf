@@ -1,12 +1,13 @@
 #include "main.h"
 
+
 /**
- * parser - reads through the format string
- * @format: string to print
- * @f_list: list of options
- * @ap: list of arguments
+ * parser - Reads through format string.
+ * @format: String to print.
+ * @f_list: List of options.
+ * @ap: Argument list.
  *
- * Return: number of characters read
+ * Return: Number of characters read.
  */
 int parser(const char *format, op_t f_list[], va_list ap)
 {
@@ -24,7 +25,7 @@ int parser(const char *format, op_t f_list[], va_list ap)
 					if (r_val == -1)
 						return (-1);
 					printed_chars += r_val;
-						break;
+					break;
 				}
 			}
 			if (f_list[j].sym == NULL && format[i + 1] != ' ')
@@ -50,16 +51,14 @@ int parser(const char *format, op_t f_list[], va_list ap)
 }
 
 /**
- * _printf - a function that produces output according to a format.
- * writes output to stdout, the standard output stream
- * @format: character string with zero or more directives
- *
- * Return: the number of characters printed
- * (excluding the null byte used to end output to strings)
+ * _printf - Produces output according to a format.
+ * @format: Array to print and check type.
+ * Return: Number of characters printed.
  */
 int _printf(const char *format, ...)
 {
 	int printed_chars;
+
 	op_t f_list[] = {
 		{"c", print_char},
 		{"s", print_str},
